@@ -112,24 +112,25 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="iOS面试题1. 多线程, 特别是NSOperation和GCD的原理.2. runtime的原理和运用场景3. SDWebImage的原理?实现机制?如何解决tableView卡顿的问题?4. block和代理,通知的区别. block的用法需要注意什么.5. strong, weak, retain, assign, copy nonatomic等的区别6. 设计模式, mvc, 单例, 工厂">
+<meta name="keywords" content="-iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/05/18/hello-world/index.html">
+<meta property="og:title" content="iOS面试题">
+<meta property="og:url" content="http://yoursite.com/2018/05/18/iOS面试题/index.html">
 <meta property="og:site_name" content="xclidongbo&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="iOS面试题1. 多线程, 特别是NSOperation和GCD的原理.2. runtime的原理和运用场景3. SDWebImage的原理?实现机制?如何解决tableView卡顿的问题?4. block和代理,通知的区别. block的用法需要注意什么.5. strong, weak, retain, assign, copy nonatomic等的区别6. 设计模式, mvc, 单例, 工厂">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-18T00:29:25.939Z">
+<meta property="og:updated_time" content="2018-05-18T11:22:57.704Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="iOS面试题">
+<meta name="twitter:description" content="iOS面试题1. 多线程, 特别是NSOperation和GCD的原理.2. runtime的原理和运用场景3. SDWebImage的原理?实现机制?如何解决tableView卡顿的问题?4. block和代理,通知的区别. block的用法需要注意什么.5. strong, weak, retain, assign, copy nonatomic等的区别6. 设计模式, mvc, 单例, 工厂">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/18/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/18/iOS面试题/"/>
 
 
 
@@ -139,7 +140,7 @@
   };
 </script>
 
-  <title>Hello World | xclidongbo's Blog</title>
+  <title>iOS面试题 | xclidongbo's Blog</title>
   
 
 
@@ -308,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/iOS面试题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -325,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">iOS面试题
               
             
           </h1>
@@ -350,12 +351,34 @@
                 
               
 
-              <time title="Created: 2018-05-18 08:29:25" itemprop="dateCreated datePublished" datetime="2018-05-18T08:29:25+08:00">2018-05-18</time>
+              <time title="Created: 2018-05-18 19:20:18 / Modified: 19:22:57" itemprop="dateCreated datePublished" datetime="2018-05-18T19:20:18+08:00">2018-05-18</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试题/" itemprop="url" rel="index"><span itemprop="name">-面试题</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -384,16 +407,7 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <h2 id="iOS面试题"><a href="#iOS面试题" class="headerlink" title="iOS面试题"></a>iOS面试题</h2><h3 id="1-多线程-特别是NSOperation和GCD的原理"><a href="#1-多线程-特别是NSOperation和GCD的原理" class="headerlink" title="1. 多线程, 特别是NSOperation和GCD的原理."></a>1. 多线程, 特别是NSOperation和GCD的原理.</h3><h3 id="2-runtime的原理和运用场景"><a href="#2-runtime的原理和运用场景" class="headerlink" title="2. runtime的原理和运用场景"></a>2. runtime的原理和运用场景</h3><h3 id="3-SDWebImage的原理-实现机制-如何解决tableView卡顿的问题"><a href="#3-SDWebImage的原理-实现机制-如何解决tableView卡顿的问题" class="headerlink" title="3. SDWebImage的原理?实现机制?如何解决tableView卡顿的问题?"></a>3. SDWebImage的原理?实现机制?如何解决tableView卡顿的问题?</h3><h3 id="4-block和代理-通知的区别-block的用法需要注意什么"><a href="#4-block和代理-通知的区别-block的用法需要注意什么" class="headerlink" title="4. block和代理,通知的区别. block的用法需要注意什么."></a>4. block和代理,通知的区别. block的用法需要注意什么.</h3><h3 id="5-strong-weak-retain-assign-copy-nonatomic等的区别"><a href="#5-strong-weak-retain-assign-copy-nonatomic等的区别" class="headerlink" title="5. strong, weak, retain, assign, copy nonatomic等的区别"></a>5. strong, weak, retain, assign, copy nonatomic等的区别</h3><h3 id="6-设计模式-mvc-单例-工厂-代理等的运用场景"><a href="#6-设计模式-mvc-单例-工厂-代理等的运用场景" class="headerlink" title="6. 设计模式, mvc, 单例, 工厂,代理等的运用场景."></a>6. 设计模式, mvc, 单例, 工厂,代理等的运用场景.</h3><h3 id="7-单例的写法-在单例中创建数组应该注意写什么"><a href="#7-单例的写法-在单例中创建数组应该注意写什么" class="headerlink" title="7.单例的写法, 在单例中创建数组应该注意写什么?"></a>7.单例的写法, 在单例中创建数组应该注意写什么?</h3><h3 id="8-NSString的时候用copy和strong的区别"><a href="#8-NSString的时候用copy和strong的区别" class="headerlink" title="8.NSString的时候用copy和strong的区别."></a>8.NSString的时候用copy和strong的区别.</h3><h3 id="9-响应链"><a href="#9-响应链" class="headerlink" title="9.响应链"></a>9.响应链</h3><h3 id="10-NSTimer在子线程中应该手动获取NSRunloop对象-否则不能循环执行"><a href="#10-NSTimer在子线程中应该手动获取NSRunloop对象-否则不能循环执行" class="headerlink" title="10. NSTimer在子线程中应该手动获取NSRunloop对象,否则不能循环执行."></a>10. NSTimer在子线程中应该手动获取NSRunloop对象,否则不能循环执行.</h3><h3 id="11-UIScrollView和NSTimer组合做循环广告轮播的时候有一个属性可以控制上下滚动tableVIew的时候-广告轮播图依然能正常滚动"><a href="#11-UIScrollView和NSTimer组合做循环广告轮播的时候有一个属性可以控制上下滚动tableVIew的时候-广告轮播图依然能正常滚动" class="headerlink" title="11. UIScrollView和NSTimer组合做循环广告轮播的时候有一个属性可以控制上下滚动tableVIew的时候,广告轮播图依然能正常滚动."></a>11. UIScrollView和NSTimer组合做循环广告轮播的时候有一个属性可以控制上下滚动tableVIew的时候,广告轮播图依然能正常滚动.</h3><h3 id="12-git和svn的用法"><a href="#12-git和svn的用法" class="headerlink" title="12.git和svn的用法."></a>12.git和svn的用法.</h3><h3 id="13-友盟报错可以查到具体某一行的错误-原理是什么"><a href="#13-友盟报错可以查到具体某一行的错误-原理是什么" class="headerlink" title="13.友盟报错可以查到具体某一行的错误, 原理是什么?"></a>13.友盟报错可以查到具体某一行的错误, 原理是什么?</h3><h3 id="14-Instrument可以检测电池的耗电量-和内存的消耗的用法"><a href="#14-Instrument可以检测电池的耗电量-和内存的消耗的用法" class="headerlink" title="14.Instrument可以检测电池的耗电量,和内存的消耗的用法."></a>14.Instrument可以检测电池的耗电量,和内存的消耗的用法.</h3><h3 id="15-ARC的原理"><a href="#15-ARC的原理" class="headerlink" title="15. ARC的原理."></a>15. ARC的原理.</h3>
       
     </div>
 
@@ -411,6 +425,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># -iOS</a>
+          
+        </div>
+      
 
       
       
@@ -420,15 +440,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/05/18/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/18/iOS面试题/" rel="prev" title="iOS面试题">
-                iOS面试题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -568,7 +588,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS面试题"><span class="nav-number">1.</span> <span class="nav-text">iOS面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-多线程-特别是NSOperation和GCD的原理"><span class="nav-number">1.1.</span> <span class="nav-text">1. 多线程, 特别是NSOperation和GCD的原理.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-runtime的原理和运用场景"><span class="nav-number">1.2.</span> <span class="nav-text">2. runtime的原理和运用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-SDWebImage的原理-实现机制-如何解决tableView卡顿的问题"><span class="nav-number">1.3.</span> <span class="nav-text">3. SDWebImage的原理?实现机制?如何解决tableView卡顿的问题?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-block和代理-通知的区别-block的用法需要注意什么"><span class="nav-number">1.4.</span> <span class="nav-text">4. block和代理,通知的区别. block的用法需要注意什么.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-strong-weak-retain-assign-copy-nonatomic等的区别"><span class="nav-number">1.5.</span> <span class="nav-text">5. strong, weak, retain, assign, copy nonatomic等的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-设计模式-mvc-单例-工厂-代理等的运用场景"><span class="nav-number">1.6.</span> <span class="nav-text">6. 设计模式, mvc, 单例, 工厂,代理等的运用场景.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-单例的写法-在单例中创建数组应该注意写什么"><span class="nav-number">1.7.</span> <span class="nav-text">7.单例的写法, 在单例中创建数组应该注意写什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-NSString的时候用copy和strong的区别"><span class="nav-number">1.8.</span> <span class="nav-text">8.NSString的时候用copy和strong的区别.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-响应链"><span class="nav-number">1.9.</span> <span class="nav-text">9.响应链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-NSTimer在子线程中应该手动获取NSRunloop对象-否则不能循环执行"><span class="nav-number">1.10.</span> <span class="nav-text">10. NSTimer在子线程中应该手动获取NSRunloop对象,否则不能循环执行.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-UIScrollView和NSTimer组合做循环广告轮播的时候有一个属性可以控制上下滚动tableVIew的时候-广告轮播图依然能正常滚动"><span class="nav-number">1.11.</span> <span class="nav-text">11. UIScrollView和NSTimer组合做循环广告轮播的时候有一个属性可以控制上下滚动tableVIew的时候,广告轮播图依然能正常滚动.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-git和svn的用法"><span class="nav-number">1.12.</span> <span class="nav-text">12.git和svn的用法.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-友盟报错可以查到具体某一行的错误-原理是什么"><span class="nav-number">1.13.</span> <span class="nav-text">13.友盟报错可以查到具体某一行的错误, 原理是什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-Instrument可以检测电池的耗电量-和内存的消耗的用法"><span class="nav-number">1.14.</span> <span class="nav-text">14.Instrument可以检测电池的耗电量,和内存的消耗的用法.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-ARC的原理"><span class="nav-number">1.15.</span> <span class="nav-text">15. ARC的原理.</span></a></li></ol></li></ol></div>
             
 
           </div>
