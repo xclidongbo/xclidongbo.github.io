@@ -368,7 +368,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-05-23 23:19:52" itemprop="dateModified" datetime="2018-05-23T23:19:52+08:00">2018-05-23</time>
+                <time title="Modified: 2018-05-23 23:21:27" itemprop="dateModified" datetime="2018-05-23T23:21:27+08:00">2018-05-23</time>
               
             
           </span>
@@ -447,9 +447,8 @@ iOS有三种线程编程技术:
         5. 主队列, 异步执行.(主线程的任务执行完毕,才能轮到主队列) start stop 0-9 都在主线程
         6. 主队列, 同步执行.(死锁,主线程中运用主队列,相当于把任务放在主线程的队列当中,而同步对于任务是立即执行的.当把任务放进主队列,它就会立即执行.但此时主线程正在运行,主队列的任务要等待主线程的任务执行完毕才能执行.主线程的任务和第一个任务就开始互相等待.)(另一种理解: 主线程的特点: 先执行主线程上的代码,后执行主队列上的代码. 同步执行dispatch_sync函数的特点: 该函数只有在添加到某队列的某方法执行完毕才会返回.即等待task执行完再返回)
         7. 全局队列. (其本质是并行队列)
-
-&gt; [示例查看](https://www.jianshu.com/p/8ab497e39eb5)
-</code></pre><h3 id="2-runtime的原理和运用场景"><a href="#2-runtime的原理和运用场景" class="headerlink" title="2. runtime的原理和运用场景"></a>2. runtime的原理和运用场景</h3><p>   runtime是比较底层的C语言API.编写的OC代码最终都转成了runtime的C语言代码.runtime最主要的是消息机制.对于C语言函数的调用在编译时候会决定调用哪个函数.OC的函数调用为消息发送.属于动态调用过程.在编译的时候并不能决定调用哪个函数.只有在运行的时候才会根据函数的名称来找到对应的函数调用.</p>
+</code></pre><p><a href="https://www.jianshu.com/p/8ab497e39eb5" target="_blank" rel="noopener">示例查看</a></p>
+<h3 id="2-runtime的原理和运用场景"><a href="#2-runtime的原理和运用场景" class="headerlink" title="2. runtime的原理和运用场景"></a>2. runtime的原理和运用场景</h3><p>   runtime是比较底层的C语言API.编写的OC代码最终都转成了runtime的C语言代码.runtime最主要的是消息机制.对于C语言函数的调用在编译时候会决定调用哪个函数.OC的函数调用为消息发送.属于动态调用过程.在编译的时候并不能决定调用哪个函数.只有在运行的时候才会根据函数的名称来找到对应的函数调用.</p>
 <p>   实例对象instance=&gt;类class=&gt;方法method(=&gt;SEL=&gt;IMP)</p>
 <p>   runtime的运用场景:</p>
 <pre><code>1. 发送消息 (消息机制原理: 对象根据方法SEL编号来查找对应的方法)
