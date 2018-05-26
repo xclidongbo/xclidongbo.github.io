@@ -121,7 +121,7 @@
 <meta property="og:description" content="简介目前系统是Debian 9.3系统.不知从合适`ifconfig`命令已经不在linux上默认集成.目前查询和设置ip的命令由`ifconfig`改为`ip`.查询资料得知`ifconfig`是`net-tools`中已被废弃的命令.`ip`命令是`iproute2`套件中的命令. [参考此处](https://linux.cn/article-3144-1.html)  安装命令如果系统没有">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://dn-linuxcn.qbox.me/data/attachment/album/201406/04/003404uy9l1t5zayzllylm.png">
-<meta property="og:updated_time" content="2018-05-26T06:46:52.423Z">
+<meta property="og:updated_time" content="2018-05-26T06:47:58.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux-ip命令">
 <meta name="twitter:description" content="简介目前系统是Debian 9.3系统.不知从合适`ifconfig`命令已经不在linux上默认集成.目前查询和设置ip的命令由`ifconfig`改为`ip`.查询资料得知`ifconfig`是`net-tools`中已被废弃的命令.`ip`命令是`iproute2`套件中的命令. [参考此处](https://linux.cn/article-3144-1.html)  安装命令如果系统没有">
@@ -353,7 +353,7 @@
                 
               
 
-              <time title="Created: 2018-05-26 12:27:30 / Modified: 14:46:52" itemprop="dateCreated datePublished" datetime="2018-05-26T12:27:30+08:00">2018-05-26</time>
+              <time title="Created: 2018-05-26 12:27:30 / Modified: 14:47:58" itemprop="dateCreated datePublished" datetime="2018-05-26T12:27:30+08:00">2018-05-26</time>
             
 
             
@@ -417,7 +417,10 @@
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ip route show</span><br></pre></td></tr></table></figure>
 <h3 id="设置和删除ip地址"><a href="#设置和删除ip地址" class="headerlink" title="设置和删除ip地址"></a>设置和删除ip地址</h3><pre><code>给你的机器设置一个IP地址, 可以使用一下ip命令:
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ip addr add 192.168.0.193/24 dev wlan0</span><br></pre></td></tr></table></figure>
-<pre><code>ip地址有一个后缀`24`.这种用法用于在无类域内路由选择(CIDR)中来显示所用的子网掩码.在这个例子中,子网掩码是`255.255.255.0`.[CIDR参考资料](https://yunlongs.cn/wordpress/?p=302)
+<pre><code>ip地址有一个后缀`24`.这种用法用于在无类域内路由选择(CIDR)中来显示所用的子网掩码.在这个例子中,子网掩码是`255.255.255.0`.
+
+[CIDR参考资料](https://yunlongs.cn/wordpress/?p=302)
+
 删除ip地址:
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ip addr del 192.168.0.193/24 dev wlan0</span><br></pre></td></tr></table></figure>
 
