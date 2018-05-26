@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="xclidongbo&#39;s Blog">
 <meta property="og:description" content="iOS面试题1. 多线程, 特别是NSOperation和GCD的原理.多线程是一个比较轻量级的方法来实现一个应用程序内多个代码执行路径.  iPhone中的线程并不是无节制的,主线程的堆栈大小是1M,第二个线程开始就是512KB.只有主线程有修改UI的能力.  一个运行的程序就是一个进程,一个进程至少包含一个线程.  Mac和iOS中程序启动,创造好一个进程的同时,一个线程便开始运作,这个线程叫">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-23T15:21:27.072Z">
+<meta property="og:updated_time" content="2018-05-26T04:28:07.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS面试题">
 <meta name="twitter:description" content="iOS面试题1. 多线程, 特别是NSOperation和GCD的原理.多线程是一个比较轻量级的方法来实现一个应用程序内多个代码执行路径.  iPhone中的线程并不是无节制的,主线程的堆栈大小是1M,第二个线程开始就是512KB.只有主线程有修改UI的能力.  一个运行的程序就是一个进程,一个进程至少包含一个线程.  Mac和iOS中程序启动,创造好一个进程的同时,一个线程便开始运作,这个线程叫">
@@ -368,7 +368,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-05-23 23:21:27" itemprop="dateModified" datetime="2018-05-23T23:21:27+08:00">2018-05-23</time>
+                <time title="Modified: 2018-05-26 12:28:07" itemprop="dateModified" datetime="2018-05-26T12:28:07+08:00">2018-05-26</time>
               
             
           </span>
@@ -501,6 +501,19 @@ ARC原理:
     - 想长期拥有某个对象,应该用strong,而不是weak.
     - 其他基本类型依然用assign.
     - 两端互相引用时,一端用strong,一端用weak.
+</code></pre><h3 id="HTTP协议中POST方法和GET方法有哪些区别"><a href="#HTTP协议中POST方法和GET方法有哪些区别" class="headerlink" title="HTTP协议中POST方法和GET方法有哪些区别?"></a>HTTP协议中POST方法和GET方法有哪些区别?</h3><pre><code>- GET用于向服务器请求, POST用于提交数据.
+- GET请求,请求参数拼接形式暴露在地址栏.而POST请求参数则放在请求体里.因此GET不适合用于验证密码等操作.
+- GET请求的URL长度有限制,POST请求不会有长度限制.
+</code></pre><h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><ul>
+<li>HTTP构建于TCP/IP协议之上,默认端口是80</li>
+<li>HTTP是无连接无状态的</li>
+</ul>
+<h4 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h4><p>HTTP协议是ASCII吗传输,建立在TCP/IP协议之上的应用层规范.规范把HTTP请求分为3个部分:状态行,请求头, 消息主体.类似于下面:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;method&gt;&lt;request-URL&gt;&lt;version&gt;</span><br><span class="line">&lt;headers&gt;</span><br><span class="line">&lt;entity-body&gt;</span><br></pre></td></tr></table></figure>
+<p>HTTP协议定义了与服务器交互的不同方法,最基本的有4种: <code>GET</code>,<code>POST</code>,<code>PUT</code>,<code>DELETE</code>. URL统称为资源描述符.用于描述一个网络上的资源,而<code>GET</code>,<code>POST</code>,<code>PUT</code>,<code>DELETE</code>对应这个资源的查,增,改,删四个操作.</p>
+<h3 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h3><p>常用的锁:</p>
+<pre><code>1. sychronized - 互斥锁
+2. dispatch_semaphore -自旋锁,线程进入死循环等待. 耗时操作不能太久,这种性能是最好的.
 </code></pre>
       
     </div>
@@ -543,6 +556,10 @@ ARC原理:
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/26/Linux-ip命令/" rel="prev" title="Linux-ip命令">
+                Linux-ip命令 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -616,7 +633,7 @@ ARC原理:
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -631,7 +648,9 @@ ARC原理:
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -646,7 +665,9 @@ ARC原理:
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -682,7 +703,7 @@ ARC原理:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS面试题"><span class="nav-number">1.</span> <span class="nav-text">iOS面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-多线程-特别是NSOperation和GCD的原理"><span class="nav-number">1.1.</span> <span class="nav-text">1. 多线程, 特别是NSOperation和GCD的原理.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-NSThread"><span class="nav-number">1.1.1.</span> <span class="nav-text">1) NSThread</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-NSOperation"><span class="nav-number">1.1.2.</span> <span class="nav-text">2) NSOperation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-GCD"><span class="nav-number">1.1.3.</span> <span class="nav-text">3) GCD</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-runtime的原理和运用场景"><span class="nav-number">1.2.</span> <span class="nav-text">2. runtime的原理和运用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-SDWebImage的原理-实现机制-如何解决tableView卡顿的问题"><span class="nav-number">1.3.</span> <span class="nav-text">3. SDWebImage的原理?实现机制?如何解决tableView卡顿的问题?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-block和代理-通知的区别-block的用法需要注意什么"><span class="nav-number">1.4.</span> <span class="nav-text">4. block和代理,通知的区别. block的用法需要注意什么.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-strong-weak-retain-assign-copy-nonatomic等的区别"><span class="nav-number">1.5.</span> <span class="nav-text">5. strong, weak, retain, assign, copy nonatomic等的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-设计模式-mvc-单例-工厂-代理等的运用场景"><span class="nav-number">1.6.</span> <span class="nav-text">6. 设计模式, mvc, 单例, 工厂,代理等的运用场景.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-单例的写法-在单例中创建数组应该注意写什么"><span class="nav-number">1.7.</span> <span class="nav-text">7.单例的写法, 在单例中创建数组应该注意写什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-NSString的时候用copy和strong的区别"><span class="nav-number">1.8.</span> <span class="nav-text">8.NSString的时候用copy和strong的区别.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-响应链"><span class="nav-number">1.9.</span> <span class="nav-text">9.响应链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-NSTimer在子线程中应该手动获取NSRunloop对象-否则不能循环执行"><span class="nav-number">1.10.</span> <span class="nav-text">10. NSTimer在子线程中应该手动获取NSRunloop对象,否则不能循环执行.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-UIScrollView和NSTimer组合做循环广告轮播的时候有一个属性可以控制上下滚动tableVIew的时候-广告轮播图依然能正常滚动"><span class="nav-number">1.11.</span> <span class="nav-text">11. UIScrollView和NSTimer组合做循环广告轮播的时候有一个属性可以控制上下滚动tableVIew的时候,广告轮播图依然能正常滚动.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-git和svn的用法"><span class="nav-number">1.12.</span> <span class="nav-text">12.git和svn的用法.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-友盟报错可以查到具体某一行的错误-原理是什么"><span class="nav-number">1.13.</span> <span class="nav-text">13.友盟报错可以查到具体某一行的错误, 原理是什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-Instrument可以检测电池的耗电量-和内存的消耗的用法"><span class="nav-number">1.14.</span> <span class="nav-text">14.Instrument可以检测电池的耗电量,和内存的消耗的用法.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-ARC的原理"><span class="nav-number">1.15.</span> <span class="nav-text">15. ARC的原理.</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS面试题"><span class="nav-number">1.</span> <span class="nav-text">iOS面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-多线程-特别是NSOperation和GCD的原理"><span class="nav-number">1.1.</span> <span class="nav-text">1. 多线程, 特别是NSOperation和GCD的原理.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-NSThread"><span class="nav-number">1.1.1.</span> <span class="nav-text">1) NSThread</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-NSOperation"><span class="nav-number">1.1.2.</span> <span class="nav-text">2) NSOperation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-GCD"><span class="nav-number">1.1.3.</span> <span class="nav-text">3) GCD</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-runtime的原理和运用场景"><span class="nav-number">1.2.</span> <span class="nav-text">2. runtime的原理和运用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-SDWebImage的原理-实现机制-如何解决tableView卡顿的问题"><span class="nav-number">1.3.</span> <span class="nav-text">3. SDWebImage的原理?实现机制?如何解决tableView卡顿的问题?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-block和代理-通知的区别-block的用法需要注意什么"><span class="nav-number">1.4.</span> <span class="nav-text">4. block和代理,通知的区别. block的用法需要注意什么.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-strong-weak-retain-assign-copy-nonatomic等的区别"><span class="nav-number">1.5.</span> <span class="nav-text">5. strong, weak, retain, assign, copy nonatomic等的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-设计模式-mvc-单例-工厂-代理等的运用场景"><span class="nav-number">1.6.</span> <span class="nav-text">6. 设计模式, mvc, 单例, 工厂,代理等的运用场景.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-单例的写法-在单例中创建数组应该注意写什么"><span class="nav-number">1.7.</span> <span class="nav-text">7.单例的写法, 在单例中创建数组应该注意写什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-NSString的时候用copy和strong的区别"><span class="nav-number">1.8.</span> <span class="nav-text">8.NSString的时候用copy和strong的区别.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-响应链"><span class="nav-number">1.9.</span> <span class="nav-text">9.响应链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-NSTimer在子线程中应该手动获取NSRunloop对象-否则不能循环执行"><span class="nav-number">1.10.</span> <span class="nav-text">10. NSTimer在子线程中应该手动获取NSRunloop对象,否则不能循环执行.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-UIScrollView和NSTimer组合做循环广告轮播的时候有一个属性可以控制上下滚动tableVIew的时候-广告轮播图依然能正常滚动"><span class="nav-number">1.11.</span> <span class="nav-text">11. UIScrollView和NSTimer组合做循环广告轮播的时候有一个属性可以控制上下滚动tableVIew的时候,广告轮播图依然能正常滚动.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-git和svn的用法"><span class="nav-number">1.12.</span> <span class="nav-text">12.git和svn的用法.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-友盟报错可以查到具体某一行的错误-原理是什么"><span class="nav-number">1.13.</span> <span class="nav-text">13.友盟报错可以查到具体某一行的错误, 原理是什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-Instrument可以检测电池的耗电量-和内存的消耗的用法"><span class="nav-number">1.14.</span> <span class="nav-text">14.Instrument可以检测电池的耗电量,和内存的消耗的用法.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-ARC的原理"><span class="nav-number">1.15.</span> <span class="nav-text">15. ARC的原理.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP协议中POST方法和GET方法有哪些区别"><span class="nav-number">1.16.</span> <span class="nav-text">HTTP协议中POST方法和GET方法有哪些区别?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP"><span class="nav-number">1.17.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP报文"><span class="nav-number">1.17.1.</span> <span class="nav-text">HTTP报文</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程安全"><span class="nav-number">1.18.</span> <span class="nav-text">线程安全</span></a></li></ol></li></ol></div>
             
 
           </div>
